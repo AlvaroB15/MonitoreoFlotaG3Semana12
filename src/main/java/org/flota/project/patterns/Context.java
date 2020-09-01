@@ -1,6 +1,9 @@
 package org.flota.project.patterns;
 
+import java.util.ArrayList;
+
 import org.flota.project.models.Ruta;
+import org.flota.project.models.Despacho;
 
 public class Context {
     private RutaStrategy strategy;
@@ -16,8 +19,8 @@ public class Context {
         this.strategy = strategy;
     }
 
-    public Ruta crearRuta(double maxPesos, int maxPuntos){
-        return this.strategy.crearRuta(maxPesos, maxPuntos);
+    public Ruta crearRuta(double maxPesos, int maxPuntos, ArrayList<Despacho> rutas){
+        return this.strategy.crearRuta(maxPesos, maxPuntos, rutas);
     }
 
     public double validarPeso(){
